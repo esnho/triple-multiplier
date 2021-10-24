@@ -1,0 +1,239 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kktsvetkov/heiho@latest/heiho.css" />
+  <script src="https://cdn.jsdelivr.net/gh/kktsvetkov/heiho@latest/heiho.js"></script>
+  <script src="https://unpkg.com/papaparse@5.3.1/papaparse.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      font-size: 1.2em;
+    }
+
+    #content {
+      padding: 1em;
+    }
+
+    @media screen and (min-width: 730px) and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1),
+    not all and (orientation: portrait) {
+
+      #content {
+        padding: 0;
+        max-width: 50vw;
+        margin: auto;
+      }
+    }
+
+    #content img {
+      max-width: 100%;
+    }
+
+    #doubleImage {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      max-width: 100%;
+    }
+    #doubleImage * {
+      max-width: 50% !important;
+    }
+
+    a {
+      color: cyan;
+    }
+
+    .links div h1 {
+      pointer-events: none;
+      width: 100%;
+      color: white;
+      text-shadow: 2px 0px black, 0px 2px black, -2px 0px black, 0px -2px black;
+    }
+
+    .github-link svg:hover,
+    .github-link svg:active {
+      transform: scale(1.25);
+    }
+
+    #social-icons {
+      display: flex;
+      padding: 1em;
+      justify-content: space-around;
+    }
+
+    #link-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-height: 90%;
+      overflow: auto;
+      flex-grow: 0;
+    }
+
+
+    .links {
+      overflow: hidden;
+    }
+
+    .links img:active,
+    .links img:hover {
+      opacity: 0.6;
+      background-color: rgba(188, 188, 188, 0.4);
+    }
+
+    .links div {
+      position: relative;
+      float: left;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      pointer-events: none;
+    }
+
+    #social-icons img {
+      width: 10vw;
+      max-width: 4.5em;
+    }
+
+    .links {
+      width: 50vw;
+      height: 50vw;
+      max-width: 50vw;
+      max-height: 50vw;
+      overflow: hidden;
+    }
+
+    .links img {
+      min-width: 55vw;
+      min-height: 55vw;
+      max-height: 55vw;
+      margin-left: -5vw;
+      margin-top: -5vw;
+    }
+
+    .links img:active,
+    .links img:hover {
+      min-width: 60vw;
+      min-height: 60vw;
+      max-height: 60vw;
+      margin-left: -7.5vw;
+      margin-top: -7.5vw;
+      opacity: 0.6;
+      background-color: rgba(188, 188, 188, 0.4);
+    }
+
+    .links div {
+      position: relative;
+      float: left;
+      top: -50vw;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      pointer-events: none;
+    }
+
+    @media screen and (min-width: 730px) and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1),
+    not all and (orientation: portrait) {
+
+      #social-icons img {
+        width: 5vw;
+        max-width: 2.5em;
+      }
+
+      .links {
+        width: 25vw;
+        height: 25vw;
+        max-width: 25vw;
+        max-height: 25vw;
+      }
+
+      h1 {
+        font-size: 1.2em;
+      }
+
+      .links img {
+        min-width: 30vw;
+        min-height: 30vw;
+        max-height: 30vw;
+        margin-left: -5vw;
+        margin-top: -5vw;
+      }
+
+      .links img:active,
+      .links img:hover {
+        min-width: 35vw;
+        min-height: 35vw;
+        max-height: 35vw;
+        margin-left: -7.5vw;
+        margin-top: -7.5vw;
+      }
+
+      .links div {
+        top: -25vw;
+      }
+    }
+  </style>
+</head>
+
+<body ontouchstart="">
+  <div id="content">
+    <h1>Triple Multiplier</h1>
+    <img src="built-unit-front.jpeg">
+    <p>
+      I've designed a Triple Multiplier starting from the schematics of <a href="https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20X%20Multiplier" target="_blank">Cadet X</a>.
+    </p>
+    <p>
+      I begun from a direct clone of CadetX (picture below) then decided to raise the bar and create a triple multiplier with normalised inputs, this means that you can use one input and have 3 different outputs with 3 different "parameters"!<br />
+      Or you can have a single input multiplied by 3 different signals, or any of the possible combination of 3CV x 3IN.
+    </p>
+    <img src="first-clone.jpeg">
+    <p>
+      This is the built unit.
+    </p>
+    <div id="doubleImage">
+      <img src="built-unit-side.jpeg">
+      <img src="racked.png">
+    </div>
+    <ul>
+      <li><a href="TripleMultiplier-rev0 01_2021.csv">Download the BOM</a></li>
+      <li><a onclick="bomPreview()" href="#">Preview the BOM</a></li>
+      <li><a href="TripleMultiplier-rev0 01_2021.html">Interactive BOM (use this to assembly the module)</a></li>
+    </ul>
+    <h2>Do you sell them?</h2>
+    <p>I do not plan to sell assembled units. If you are interested in PCB+Panel vist the <a href="https://community.lzxindustries.net/t/triple-multiplier/" target="_blank">LZX Forum Thread</a>, we can plan a collective order.</p>
+    <p>I don't want to release the gerbers for the moment.</p>
+    <h2>Do you have the schematics?</h2>
+    <p>Sure! Check <a href="https://community.lzxindustries.net/t/triple-multiplier/" target="_blank">this thread</a></p>
+  </div>
+</body>
+<script >
+  function bomPreview() {
+    Papa.parse("TripleMultiplier-rev0 01_2021.csv", {
+      download: true,
+      complete: function(results) {
+        Heiho(results.data);
+      }
+    });
+  }
+  window.onload = () => {
+    let images = document.getElementsByTagName("img")
+    for (let image of images) {
+      image.addEventListener('click', () => {
+        window.open(image.src, "_blank")
+      });
+    }
+  }
+</script>
+</html>
